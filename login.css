@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;600&display=swap');
+
+/* --- Reset & Global Styling --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden; /* Prevent scroll bars from video */
+}
+
+/* Video Background */
+#video-background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -100;
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+#video-background::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -50;
+}
+
+/* --- Main Form Wrapper (Centering) --- */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* Subtle overlay to help text readability over the video */
+    background: rgba(0, 0, 0, 0.4); 
+}
+
+/* --- Glassmorphism Container --- */
+.container {
+    background: rgba(255, 255, 255, 0.08); /* Semi-transparent white */
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* THE GLASS EFFECT */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    width: 400px;
+    max-width: 90%;
+    min-height: 500px;
+    color: #fff; /* Light text for dark background */
+    position: relative;
+}
+
+/* --- Form Panel Styling --- */
+.form-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    color: #00ffc8; /* Neon/Crypto color */
+    text-shadow: 0 0 5px rgba(0, 255, 200, 0.5);
+}
+
+.subtitle {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.15); /* Transparent input background */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 255, 200, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #00ffc8; /* Primary button color */
+    color: #1a1a1a;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background: #00e0a5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 255, 200, 0.4);
+}
+
+/* --- Separator and Toggle Link --- */
+.separator {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    line-height: 0.1em;
+    margin: 20px 0;
+}
+
+.separator span {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0 10px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.toggle {
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #00ffc8;
+    text-align: center;
+}
+
+.toggle:hover {
+    text-decoration: underline;
+}
+
+/* --- Social Icons --- */
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.social {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.google-btn:hover { background-color: #db4437; border-color: #db4437; }
+.facebook-btn:hover { background-color: #4267B2; border-color: #4267B2; }
+.github-btn:hover { background-color: #333; border-color: #333; }

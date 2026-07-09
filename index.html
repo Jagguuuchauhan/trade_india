@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trade India - Your Smart FX Trading Platform</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="dark-mode">
+  <div id="notification-popup" class="notification-popup"></div>
+
+  <header>
+    <div class="logo">Trade<span>India</span></div>
+    <nav>
+      <a href="#hero-section" id="nav-home" class="nav-link active-nav">Home</a>
+      <a href="#market-situation-section" id="nav-market" class="nav-link">Market</a>
+      <a href="#learning-center-section" id="nav-learning" class="nav-link">FX Academy</a>
+      <a href="#trading-platform" id="nav-virtual-trading" class="nav-link highlight-nav">Virtual Trading</a>
+      <a href="#logout-section" id="nav-logout" class="nav-link" > logout</a>
+    </nav>
+  </header>
+
+
+  <section class="hero" id="hero-section">
+    <div class="hero-content">
+      <h1 id="hero-title">Practice Forex Trading Without Risk</h1>
+      <p id="hero-description">Master currency pairs, technical analysis, and risk management in a simulated environment.</p>
+      <a href="#trading-platform" class="btn" id="hero-button">Start Virtual Trading</a>
+    </div>
+
+    <div class="home-components-grid">
+      <div class="component-card animated-card">
+        <h3><i class="fas fa-clock"></i> Real-time FX Pricing</h3>
+        <ul id="fx-watch-list">
+          </ul>
+        <a href="#trading-platform" data-pair="EURUSD" class="btn-small go-to-chart-btn">Go to Trading Chart</a>
+      </div>
+      <div class="component-card animated-card">
+        <h3><i class="fas fa-calendar-alt"></i> Upcoming Events( FinanceFlow)</h3>
+        <ul id="economic-calendar-list">
+          <li data-event-id="fomc"><span class="event-time">10:00 AM (EST):</span> Federal Reserve (USA) <i class="fas fa-external-link-alt"></i></li>
+          <li data-event-id="gdp"><span class="event-time">2:30 PM (BST):</span> US GDP QoQ <i class="fas fa-external-link-alt"></i></li>
+          <li data-event-id="nfp"><span class="event-time">8:30 AM (AEST):</span> AUD CPI (Consumer Price Index) <i class="fas fa-external-link-alt"></i></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <hr class="section-separator">
+
+  <section class="market-situation hidden-section" id="market-situation-section">
+    <h2 class="section-title">Global Market Overview</h2>
+    <div class="market-summary-grid">
+        <div class="summary-card animated-market-card">
+            <h3 class="market-title"><i class="fas fa-chart-bar"></i> US Stocks (NASDAQ)</h3>
+            <p class="market-index" id="nasdaq-index">24,468.50</p>
+            <p class="market-change price-up" id="nasdaq-change">+1.25% (+210.32)</p>
+            <p class="market-session">Focus: Tech sector earnings & interest rates.</p>
+        </div>
+        <div class="summary-card animated-market-card">
+            <h3 class="market-title"><i class="fas fa-mountain"></i> Asian Markets (Hang Seng)</h3>
+            <p class="market-index" id="hangseng-index">26,160.20</p>
+            <p class="market-change price-down" id="hangseng-change">-0.88% (-162.80)</p>
+            <p class="market-session">Focus: China economic data & property sector concerns.</p>
+        </div>
+        <div class="summary-card animated-market-card">
+            <h3 class="market-title"><i class="fas fa-euro-sign"></i> European Markets (DAX)</h3>
+            <p class="market-index" id="dax-index">24,702.75</p>
+            <p class="market-change price-up" id="dax-change">+0.45% (+81.90)</p>
+            <p class="market-session">Focus: ECB policy and geopolitical stability.</p>
+        </div>
+         <div class="summary-card animated-market-card">
+     <h3 class="market-title"></i> Nifty 50</h3>
+     <p class="market-index" id="dax-index">24,702.75</p>
+     <p class="market-change price-up" id="dax-change">+0.65% (+133.90)</p>
+     <p class="market-session">Focus: corporate earnings growth, domestic liquidity, and macroeconomic indicator stability.</p>
+ </div>
+    </div>
+    <div class="market-news-placeholder">
+        <h3><i class="fas fa-newspaper"></i> Top Market Headlines</h3>
+        <ul>
+            <li>The U.S. dollar has given up almost all its recent gains as Iran reopens the Strait of Hormuz during a ceasefire with Israel/Lebanon, reducing demand for safe-haven assets.</li>
+            <li>
+                As of April 18, 2026, global markets are rising, with the S&P 500 and Nasdaq hitting record highs as oil prices plunge below   due to eased tensions in the Strait of Hormuz. Investors are focused on AI sector investment, ongoing Middle East geopolitical developments, and strong corporate earnings
+            </li>
+            <li>Oil Prices Plummet: Brent crude dropped over 10% to below $90 a barrel on April 17, as Iran announced the reopening of the Strait of Hormuz, easing the "war premium".</li>
+            <li>Major stock markets rallied, with the S&P 500 and Dow Jones jumping 1.2-1.3% to new records on hopes of a "worst-case scenario" being avoided.</li>
+        </ul>
+    </div>
+  </section>
+  
+  <div id="market-detail-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 id="market-modal-title"></h3>
+        <div id="market-modal-animation-area" class="market-modal-animation-area">
+            <i class="fas fa-spinner fa-spin fa-2x"></i> Loading Live News Feed...
+        </div>
+        <p id="market-modal-details"></p>
+    </div>
+  </div>
+
+  <hr class="section-separator section-separator-trading">
+
+  <section class="trading-platform hidden-section" id="trading-platform">
+    <h2 class="section-title">Forex Virtual Trading Console</h2>
+
+    <div class="trading-layout">
+        
+        <div class="chart-area" id="live-chart-section">
+            <h3 id="live-chart-title">Live Chart <span id="current-pair-title">EUR/USD</span></h3>
+            
+            <div class="chart-search">
+                <div class="search-container">
+                    <input type="text" id="chart-search-input" placeholder="Search Symbol (e.g., EURUSD, AAPL, XAUUSD)">
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+            
+            <div class="tradingview-widget-container chart-container">
+                <div id="tradingview_chart"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            </div>
+        </div>
+
+        <div class="control-area">
+
+            <div class="virtual-balance" data-tooltip="Your practice account balance. Trades here are not real.">
+              <i class="fas fa-sack-dollar"></i>
+              <span id="virtual-balance-text">Virtual Balance: $100,000.00</span>
+            </div>
+            <div class="virtual-equity" data-tooltip="Balance + Realized/Unrealized P&L">
+                <i class="fas fa-chart-line"></i>
+                <span id="virtual-equity-text">Virtual Equity: $100,000.00</span>
+            </div>
+
+            <div class="trade-form" id="trade-form">
+                <h3>Place New Order</h3>
+                
+                <div class="trading-controls">
+                    <select id="forex-pair-select" data-tooltip="Select the currency pair you wish to trade.">
+                        <option value="EURUSD" data-pips="0.0001">EUR/USD</option>
+                        <option value="USDJPY" data-pips="0.01">USD/JPY</option>
+                        <option value="GBPUSD" data-pips="0.0001">GBP/USD</option>
+                        <option value="AUDUSD" data-pips="0.0001">AUD/USD</option>
+                        <option value="USDCAD" data-pips="0.0001">USD/CAD</option>
+                    </select>
+                    <input type="number" id="lot-size" placeholder="Lot Size (Min: 0.01)" min="0.01" step="0.01" value="0.1" data-tooltip="Standard Lot: 1.0 (100,000 units). Mini Lot: 0.1 (10,000 units).">
+                </div>
+                
+                <div class="order-type">
+                    <button id="market-order-btn" class="active" data-order-type="market" data-tooltip="Execute trade immediately at the best available market price.">Market</button>
+                    <button id="limit-order-btn" data-order-type="limit" data-tooltip="Set a price to buy (lower) or sell (higher) in the future.">Limit</button>
+                </div>
+                
+                <input type="number" id="limit-price" placeholder="Limit Price (e.g., 1.0950)" class="hidden" min="0" step="0.0001">
+                
+                <div class="optional-orders">
+                    <input type="number" id="stop-loss-price" placeholder="Stop Loss Price" min="0" step="0.0001" data-tooltip="Close position to limit loss.">
+                    <input type="number" id="take-profit-price" placeholder="Take Profit Price" min="0" step="0.0001" data-tooltip="Close position to secure profit.">
+                </div>
+                
+                <div class="trade-execution-buttons">
+                    <button class="execute-trade buy-btn" id="buy-btn" data-tooltip="Go Long: Buy low, sell high. Profit if price rises.">BUY</button>
+                    <button class="execute-trade sell-btn" id="sell-btn" data-tooltip="Go Short: Sell high, buy low. Profit if price falls.">SELL</button>
+                </div>
+                
+                <p id="price-quote" class="price-quote">Current Price: EUR/USD @ Loading...</p>
+                <div class="manual-price-sync" id="manual-price-sync">
+                    <input type="number" id="manual-anchor-price" placeholder="Sync Price (e.g., 1.0985)" min="0" step="0.0001">
+                    <button id="sync-price-btn" class="btn-small"><i class="fas fa-sync-alt"></i> Sync Price</button>
+                </div>
+                
+                <p id="margin-required-quote" class="margin-quote hidden"></p>
+            </div>
+            
+            <div class="portfolio" id="portfolio-section">
+                <h3 id="portfolio-title">Your Open Positions <i class="fas fa-chart-pie"></i></h3>
+                <div class="portfolio-table-wrapper">
+                    <table class="portfolio-table">
+                        <thead>
+                            <tr>
+                                <th>Pair</th>
+                                <th>Type</th>
+                                <th>Size</th>
+                                <th>Entry</th>
+                                <th>Current</th>
+                                <th>P&L (USD)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="portfolio-body">
+                            </tbody>
+                    </table>
+                    <div id="portfolio-empty-state" class="empty-state">No open positions yet. Place a trade!</div>
+                </div>
+                <button id="show-history-btn" class="btn-small">View Trade History</button>
+            </div>
+
+            <div class="portfolio trade-history-section hidden" id="trade-history-section">
+                <h3>Trade History <i class="fas fa-history"></i></h3>
+                <div class="portfolio-table-wrapper">
+                    <table class="portfolio-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Pair</th>
+                                <th>Type</th>
+                                <th>Entry</th>
+                                <th>Close</th>
+                                <th>P&L</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-body">
+                        </tbody>
+                    </table>
+                    <div id="history-empty-state" class="empty-state">No closed trades yet.</div>
+                </div>
+                <button id="hide-history-btn" class="btn-small">Back to Positions</button>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+  <hr class="section-separator section-separator-learning">
+
+  <section class="learning-content" id="learning-center-section">
+    <h2 id="learning-center-title">FX Academy: Beginner to Pro</h2>
+    
+    <div class="features">
+        <div class="feature-box animated-feature-box" data-filter="basics" data-tooltip="Start your journey with fundamental Forex concepts.">
+            <i class="fas fa-wallet feature-icon"></i>
+            <h3 id="basics-title">Forex Basics</h3>
+            <p id="basics-desc">Pips, Lots, and Leverage explained.</p>
+        </div>
+        <div class="feature-box animated-feature-box" data-filter="technical" data-tooltip="Learn to read charts and predict market direction.">
+            <i class="fas fa-chart-line feature-icon"></i>
+            <h3 id="technical-title">Technical Analysis</h3>
+            <p id="technical-desc">Trendlines, S/R, and Indicators.</p>
+        </div>
+        <div class="feature-box animated-feature-box" data-filter="risk" data-tooltip="Essential knowledge to protect your capital.">
+            <i class="fas fa-shield-alt feature-icon"></i>
+            <h3 id="risk-title">Risk Management</h3>
+            <p id="risk-desc">Stop Loss, Take Profit, and position sizing.</p>
+        </div>
+    </div>
+    
+    <div id="dynamic-learning-area" class="hidden">
+        <h3 data-content-type="basics">Basics of Forex</h3>
+        <div class="content-grid" data-content-type="basics">
+            <div class="content-card" data-id="what-is-forex"><h4>What is Forex?</h4><p>The global decentralized market for the trading of currencies.</p></div>
+            <div class="content-card" data-id="currency-pairs"><h4>Currency Pairs</h4><p>Understanding Major, Minor, and Exotic pairs.</p></div>
+            <div class="content-card" data-id="pips"><h4>Pips & Ticks</h4><p>The smallest price change in an exchange rate.</p></div>
+            <div class="content-card" data-id="lots"><h4>Lots (Trade Size)</h4><p>Standard, Mini, and Micro lots for position sizing.</p></div>
+            <div class="content-card" data-id="leverage"><h4>Leverage</h4><p>Borrowing capital to increase potential returns and risks.</p></div>
+        </div>
+
+        <div class="learning-separator" data-content-type="basics"></div>
+
+        <h3 data-content-type="technical">Technical Analysis</h3>
+        <div class="content-grid" data-content-type="technical">
+            <div class="content-card" data-id="sr"><h4>Support & Resistance</h4><p>Key price levels where buying or selling pressure is expected to reverse the price.</p></div>
+            <div class="content-card" data-id="trendlines"><h4>Trend Lines</h4><p>Drawing lines to identify the prevailing direction of the market.</p></div>
+            <div class="content-card" data-id="ma"><h4>Moving Averages</h4><p>Smoothing out price data to identify trend direction.</p></div>
+            <div class="content-card" data-id="rsi"><h4>RSI (Indicator)</h4><p>Identifying overbought and oversold conditions.</p></div>
+            <div class="content-card" data-id="engulfing"><h4>Candlestick Patterns</h4><p>Mastering bullish and bearish engulfing patterns.</p></div>
+        </div>
+        
+        <div class="learning-separator" data-content-type="technical"></div>
+
+        <h3 data-content-type="risk">Risk Management</h3>
+        <div class="content-grid" data-content-type="risk">
+            <div class="content-card" data-id="stop-loss"><h4>Stop Loss (SL)</h4><p>An order to close a trade at a pre-determined maximum loss level.</p></div>
+            <div class="content-card" data-id="take-profit"><h4>Take Profit (TP)</h4><p>An order to close a trade at a pre-determined profit level.</p></div>
+            <div class="content-card" data-id="position-sizing"><h4>Position Sizing</h4><p>Determining the appropriate trade size to manage risk per trade.</p></div>
+        </div>
+    </div>
+    
+    <div id="content-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-details"></p>
+            <div id="modal-image-container"></div>
+        </div>
+    </div>
+  </section>
+
+  <hr class="section-separator section-separator-footer">
+
+  <footer>
+      <div>
+    <h3 >CONTACT</h3>
+    <p>Email: tradeindia@virtualtrade.com</p>
+    <p>Phone: +91 9876543210</p>
+</div>
+    <p>&copy; 2026 ForexPro(TRADE INDIA). All rights reserved. </p>
+        <!--Tab to edit-->
+    <p> Virtual Trading is for educational purposes only. Trading is risky.</p>
+    
+  </footer>
+
+  <div class="floating-help">
+    <a href="#learning-center-section" data-tooltip="Go to FX Academy">🎓</a>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
